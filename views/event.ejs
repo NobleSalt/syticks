@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <%- include("partials/css") %>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Document Title
+	============================================= -->
+    <title>Home | Syticks</title>
+  </head>
+
+  <body class="stretched">
+    <!-- Document Wrapper
+	============================================= -->
+    <!-- Top Bar
+		============================================= -->
+    <%- include("partials/top") %>
+    <!-- #top-bar end -->
+
+    <div id="wrapper" class="clearfix">
+      <!-- Header
+		============================================= -->
+      <%- include("partials/header") %>
+      <!-- #header end -->
+
+      <section id="page-title">
+        <div class="container clearfix">
+          <h1>The best event in Unizik</h1>
+        </div>
+      </section>
+      <!-- #page-title end -->
+
+      <!-- Content
+      ============================================= -->
+
+      <section id="content">
+        <div class="content-wrap">
+          <div class="container clearfix">
+            <div class="postcontent nobottommargin clearfix">
+              <div class="single-product">
+                <div class="product">
+                  <div class="col_half">
+                    <!-- Product Single - Gallery
+                    ============================================= -->
+                    <div class="product-image">
+                      <div
+                        class="fslider"
+                        data-pagi="false"
+                        data-arrows="false"
+                        data-thumbs="true"
+                      >
+                        <div class="container">
+                          <div class="slider-wrap" data-lightbox="gallery">
+                            <div
+                              class="slide"
+                              data-thumb="images/shop/thumbs/dress/3.jpg"
+                            >
+                              <a
+                                href="images/shop/dress/3.jpg"
+                                title="<%= data.name %> "
+                                data-lightbox="gallery-item"
+                                ><img
+                                  src="images/shop/dress/3.jpg"
+                                  alt="<%= data.name %> >"
+                              /></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Product Single - Gallery End -->
+                  </div>
+
+                  <div class="col_half col_last product-desc">
+                    <!-- Product Single - Quantity & Cart Button
+                    ============================================= -->
+
+                    <!-- Product Single - Quantity & Cart Button End -->
+
+                    <div class="clear"></div>
+
+                    <!-- Product Single - Short Description
+                    ============================================= -->
+                    <p><%= data.description %></p>
+
+                    <% if (data.features) { %>
+                    <ul class="iconlist">
+                      <% for( let i = 0; i < data.features.length; i++ ) { %>
+                      <li>
+                        <i class="icon-caret-right"></i><%= data.features[i] %>
+                      </li>
+                      <% } %>
+                    </ul>
+                    <% } %>
+
+                    <!-- Product Single - Short Description End -->
+
+                    <!-- Product Single - Meta
+                    ============================================= -->
+                    <div class="card product-meta">
+                      <div class="card-body">
+                        <span itemprop="productID" class="sku_wrapper"
+                          >Event ID:
+                          <span class="sku"
+                            >Syticks- <%= event.slug %>
+                          </span></span
+                        >
+                      </div>
+                    </div>
+                    <!-- Product Single - Meta End -->
+
+                    <!-- Product Single - Share
+                    ============================================= -->
+                    <!-- Product Single - Share End -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="clear"></div>
+              <div class="line"></div>
+              <div class="row pricing bottommargin clearfix">
+                <% for( let i = 0; i < data.pricing.length; i++ ) { %>
+
+                <div class="pricing-box pricing-minimal col-md-4">
+                  <div class="pricing-title">
+                    <h3>data.pricing[i].priceName</h3>
+
+                    <% if (data.pricing[i].description) { %>
+                    <span>Single seat</span>
+                    <% } %>
+                  </div>
+                  <div class="pricing-price">
+                    <span class="price-unit">&#8358;</span
+                    >data.pricing[i].priceAmount
+                  </div>
+                  <div class="pricing-action">
+                    <form
+                      class="cart nobottommargin clearfix"
+                      method="post"
+                      enctype="multipart/form-data"
+                    >
+                      <div class="quantity clearfix">
+                        <input type="button" value="-" class="minus" />
+                        <input
+                          type="text"
+                          step="1"
+                          min="0"
+                          name="quantity"
+                          value="0"
+                          title="Qty"
+                          class="qty"
+                          size="4"
+                          data-name="<%=data.pricing[i].priceName  %> "
+                          data-amount="<%=data.pricing[i].priceName  %> "
+                        />
+                        <input type="button" value="+" class="plus" />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <% } %>
+              </div>
+            </div>
+
+            <div class="sidebar nobottommargin col_last clearfix">
+              <div class="sidebar-widgets-wrap">
+                <div class="widget widget_links clearfix">
+                  <h4>Cart</h4>
+                  <ul class="list-group custom-cart">
+                    <li
+                      class="list-group-item custom-cart-item"
+                      data-name="regular"
+                      data-price="1000"
+                    >
+                      Regular
+                      <span
+                        class="badge badge-secondary float-right custom-span"
+                        style="margin-top: 3px"
+                        >0</span
+                      >
+                    </li>
+                    <li
+                      class="list-group-item custom-cart-item"
+                      data-name="vip"
+                      data-price="10000"
+                    >
+                      VIP
+                      <span
+                        class="badge badge-secondary float-right custom-span"
+                        style="margin-top: 3px"
+                        >0</span
+                      >
+                    </li>
+                    <li
+                      class="list-group-item custom-cart-item"
+                      data-name="vvip"
+                      data-price="100000"
+                    >
+                      VVIP
+                      <span
+                        class="badge badge-secondary float-right custom-span"
+                        style="margin-top: 3px"
+                        >0</span
+                      >
+                    </li>
+                  </ul>
+                  <br />
+                  <form
+                    action="/transaction/:id"
+                    method="post"
+                    class="cart-form"
+                  >
+                    <input type="hidden" name="amount" class="cart-input" />
+                    <!--  <input type="hidden" name="regular" class="cart-input" />
+                    <input type="hidden" name="vip" class="cart-input" />
+                    <input type="hidden" name="vvip" class="cart-input" /> -->
+                    <button
+                      type="submit"
+                      class="button button-3d button-rounded center"
+                    >
+                      Checkout (&#8358;<span
+                        name="amount"
+                        class="custom-pay-btn"
+                        >0</span
+                      >)
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- #content end -->
+
+      <!-- Footer
+		============================================= -->
+      <%- include("partials/footer") %>
+      <!-- #footer end -->
+
+      <!-- #footer end -->
+    </div>
+    <!-- #wrapper end -->
+
+    <!-- Go To Top
+	============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+	============================================= -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/plugins.js"></script>
+
+    <!-- Footer Scripts
+	============================================= -->
+    <script src="/js/functions.js"></script>
+  </body>
+</html>

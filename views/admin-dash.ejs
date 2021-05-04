@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <%- include("partials/css") %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Document Title
+	============================================= -->
+    <title>Upload | Syticks</title>
+  </head>
+
+  <body class="stretched">
+    <!-- Document Wrapper
+	============================================= -->
+    <!-- Top Bar
+		============================================= -->
+    <%- include("partials/top") %>
+    <!-- #top-bar end -->
+
+    <div id="wrapper" class="clearfix">
+      <!-- Header
+		============================================= -->
+      <%- include("partials/header") %>
+      <!-- #header end -->
+
+      <section id="page-title">
+        <div class="container clearfix">
+          <h1>Admin Page</h1>
+        </div>
+      </section>
+      <!-- #page-title end -->
+
+      <!-- Content
+      ============================================= -->
+      <section id="content">
+        <div class="content-wrap">
+          <div class="container clearfix">
+            <div class="row pricing bottommargin clearfix">
+              <div class="col-md-4">
+                <div class="pricing-box">
+                  <div class="pricing-title">
+                    <h3>Users</h3>
+                  </div>
+                  <div class="pricing-price">
+                    <span class="price-unit"></span>1000
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="pricing-box">
+                  <div class="pricing-title">
+                    <h3>No. of Tickets Sold</h3>
+                  </div>
+                  <div class="pricing-price">
+                    <span class="price-unit"></span>12
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="pricing-box">
+                  <div class="pricing-title">
+                    <h3>Number of Uploads</h3>
+                  </div>
+                  <div class="pricing-price">
+                    <span class="price-unit"></span>19
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="pricing-box">
+                  <div class="pricing-title">
+                    <h3>Total Income</h3>
+                  </div>
+                  <div class="pricing-price">
+                    <span class="price-unit"></span>19
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="pricing-box">
+                  <div class="pricing-title">
+                    <h3>Total amount paid to hosts</h3>
+                  </div>
+                  <div class="pricing-price">
+                    <span class="price-unit"></span>19
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="pricing-box">
+                  <div class="pricing-title">
+                    <h3>Profit</h3>
+                  </div>
+                  <div class="pricing-price">
+                    <span class="price-unit"></span>19
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              href="/admin/upload"
+              class="button button-3d button-large button-rounded btn-block center"
+              >UPLOAD AN EVENT</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- #content end -->
+
+      <!-- #content end -->
+
+      <!-- Footer
+		============================================= -->
+      <%- include("partials/footer") %>
+      <!-- #footer end -->
+
+      <!-- #footer end -->
+    </div>
+    <!-- #wrapper end -->
+
+    <!-- Go To Top
+	============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+	============================================= -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/plugins.js"></script>
+
+    <!-- Footer Scripts
+	============================================= -->
+    <script src="/js/functions.js"></script>
+
+    <!-- Footer Scripts
+	============================================= -->
+    <script src="/js/functions.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#datatable1").dataTable();
+      });
+    </script>
+  </body>
+</html>

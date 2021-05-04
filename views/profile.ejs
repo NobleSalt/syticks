@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <%- include("partials/css") %>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Document Title
+	============================================= -->
+    <title><%= title %></title>
+  </head>
+
+  <body class="stretched">
+    <!-- Document Wrapper
+	============================================= -->
+    <!-- Top Bar
+		============================================= -->
+    <%- include("partials/top") %>
+    <!-- #top-bar end -->
+
+    <div id="wrapper" class="clearfix">
+      <!-- Header
+		============================================= -->
+      <%- include("partials/auth-header") %>
+      <!-- #header end -->
+
+      <section id="page-title">
+        <div class="container clearfix">
+          <h1>Profile</h1>
+        </div>
+      </section>
+      <!-- #page-title end -->
+
+      <!-- Content
+      ============================================= -->
+      <section id="content">
+        <div class="content-wrap">
+          <div class="container clearfix">
+            <div class="divcenter nobottommargin">
+              <div class="row">
+                <div class="divcenter">
+                  <a href="#">
+                    <img
+                      alt="100%x180"
+                      src="/images/extras/200x200.gif"
+                      class="img-thumbnail"
+                      style="
+                        height: 250px;
+                        width: 250px;
+                        display: block;
+                        border-radius: 100%;
+                      "
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="divcenter topmargin center">
+                <h2 class="nobottommargin"><%= user.username %></h2>
+                <span class="uppercase">userid-<%= user._id %> </span>
+              </div>
+
+              <div class="toggle topmargin">
+                <div class="togglet toggleta">
+                  <i class="toggle-closed icon-calendar3"></i
+                  ><i class="toggle-open icon-calendar-alt"></i>
+                  <div>
+                    <h4>Events</h4>
+                  </div>
+                </div>
+                <div class="togglec">
+                  <div class="tabs clearfix" id="tab-3">
+                    <ul class="tab-nav tab-nav2 clearfix">
+                      <li><a href="#tabs-10">Up Coming Events</a></li>
+                      <li><a href="#tabs-11">Past Events</a></li>
+                    </ul>
+
+                    <div class="tab-container">
+                      <div class="tab-content clearfix" id="tabs-10">
+                        <div class="card">
+                          <!-- Default panel contents -->
+
+                          <!-- Table -->
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Event Name</th>
+                                <th>Tickets Bought</th>
+                                <th>Price</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>1</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <td>2</td>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <td>3</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="tab-content clearfix" id="tabs-11">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Event Name</th>
+                              <th>Tickets Bought</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>Larry</td>
+                              <td>the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="toggle">
+                <div class="togglet toggleta">
+                  <i class="toggle-closed icon-phone-portrait"></i
+                  ><i class="toggle-open icon-phone-portrait"></i>
+                  <div>
+                    <h4>Contact Us</h4>
+                  </div>
+                </div>
+                <div class="togglec">
+                  <div class="row clear-bottommargin">
+                    <div class="col-lg-3 col-md-6 bottommargin clearfix">
+                      <div class="feature-box fbox-center fbox-bg fbox-plain">
+                        <div class="fbox-icon">
+                          <a href="#"><i class="icon-whatsapp"></i></a>
+                        </div>
+                        <h3>
+                          DM or Call us On<span class="subtitle"
+                            >+(234)9-07982-9250</span
+                          >
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 bottommargin clearfix">
+                      <div class="feature-box fbox-center fbox-bg fbox-plain">
+                        <div class="fbox-icon">
+                          <a href="#"><i class="icon-facebook"></i></a>
+                        </div>
+                        <h3>
+                          Like Us on Facebook<span class="subtitle"
+                            >1M Likes</span
+                          >
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 bottommargin clearfix">
+                      <div class="feature-box fbox-center fbox-bg fbox-plain">
+                        <div class="fbox-icon">
+                          <a href="#"><i class="icon-instagram"></i></a>
+                        </div>
+                        <h3>
+                          Follow Us on Instagram<span class="subtitle"
+                            >2M Followers</span
+                          >
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 bottommargin clearfix">
+                      <div class="feature-box fbox-center fbox-bg fbox-plain">
+                        <div class="fbox-icon">
+                          <a href="#"><i class="icon-twitter2"></i></a>
+                        </div>
+                        <h3>
+                          Follow Us on Twitter<span class="subtitle"
+                            >2.3M Followers</span
+                          >
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="toggle">
+                <div class="togglet toggleta">
+                  <i class="toggle-closed icon-question-sign"></i
+                  ><i class="toggle-open icon-question1"></i>
+                  <div>
+                    <h4 class="highlight-me">Need Help</h4>
+                  </div>
+                </div>
+                <div class="togglec">
+                  <div
+                    id="q-contact"
+                    class="widget quick-contact-widget form-widget clearfix"
+                  >
+                    <div class="form-result"></div>
+                    <form
+                      id="quick-contact-form"
+                      name="quick-contact-form"
+                      action="include/form.php"
+                      method="post"
+                      class="quick-contact-form nobottommargin"
+                      novalidate="novalidate"
+                    >
+                      <div class="form-process"></div>
+
+                      <input
+                        type="text"
+                        class="required sm-form-control input-block-level"
+                        id="quick-contact-form-name"
+                        name="quick-contact-form-name"
+                        value=""
+                        placeholder="Full Name"
+                      />
+                      <input
+                        type="text"
+                        class="required sm-form-control email input-block-level"
+                        id="quick-contact-form-email"
+                        name="quick-contact-form-email"
+                        value=""
+                        placeholder="Email Address"
+                      />
+                      <textarea
+                        class="required sm-form-control input-block-level short-textarea"
+                        id="quick-contact-form-message"
+                        name="quick-contact-form-message"
+                        rows="4"
+                        cols="30"
+                        placeholder="Message"
+                      ></textarea>
+                      <input
+                        type="text"
+                        class="hidden"
+                        id="quick-contact-form-botcheck"
+                        name="quick-contact-form-botcheck"
+                        value=""
+                      />
+                      <input
+                        type="hidden"
+                        name="prefix"
+                        value="quick-contact-form-"
+                      />
+                      <button
+                        type="submit"
+                        id="quick-contact-form-submit"
+                        name="quick-contact-form-submit"
+                        class="button button-small button-3d nomargin"
+                        value="submit"
+                      >
+                        Send Email
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- here -->
+            </div>
+          </div>
+          <div class="container clearfix"></div>
+        </div>
+      </section>
+      <!-- #content end -->
+
+      <!-- Footer
+		============================================= -->
+      <%- include("partials/footer") %>
+      <!-- #footer end -->
+
+      <!-- #footer end -->
+    </div>
+    <!-- #wrapper end -->
+
+    <!-- Go To Top
+	============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+	============================================= -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/plugins.js"></script>
+
+    <!-- Footer Scripts
+	============================================= -->
+    <script src="/js/functions.js"></script>
+  </body>
+</html>

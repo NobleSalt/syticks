@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <%- include("partials/css") %>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Document Title
+	============================================= -->
+    <title>Home | Syticks</title>
+  </head>
+
+  <body class="stretched">
+    <!-- Document Wrapper
+	============================================= -->
+    <!-- Top Bar
+		============================================= -->
+    <%- include("partials/top") %>
+    <!-- #top-bar end -->
+
+    <div id="wrapper" class="clearfix">
+      <!-- Header
+		============================================= -->
+      <%- include("partials/header") %>
+      <!-- #header end -->
+
+      <section id="page-title">
+        <div class="container clearfix">
+          <h1>Account</h1>
+        </div>
+      </section>
+      <!-- #page-title end -->
+
+      <!-- Content
+      ============================================= -->
+      <section id="content">
+        <div class="content-wrap">
+          <div class="container clearfix">
+            <div class="col_half divcenter nobottommargin">
+              <div class="well well-lg nobottommargin">
+                <form
+                  id="login-form"
+                  class="nobottommargin"
+                  action="/login"
+                  method="POST"
+                >
+                  <h3>Login to your Account</h3>
+
+                  <div class="col_full">
+                    <label for="username">Username:</label>
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      value=""
+                      class="form-control"
+                    />
+                  </div>
+
+                  <div class="col_full">
+                    <label for="password">Password:</label>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      value=""
+                      class="form-control"
+                    />
+                  </div>
+
+                  <div class="col_full nobottommargin">
+                    <button
+                      class="button button-3d nomargin"
+                      id="login-form-submit"
+                      name="login-form-submit"
+                      type="submit"
+                      value="login"
+                    >
+                      Login
+                    </button>
+                    <a href="#" class="fright">Forgot Password?</a>
+                  </div>
+                  <p class="fright">
+                    Do not have an account?
+                    <a href="/register" class="fright">Register</a>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- #content end -->
+
+      <!-- Footer
+		============================================= -->
+      <%- include("partials/footer") %>
+      <!-- #footer end -->
+
+      <!-- #footer end -->
+    </div>
+    <!-- #wrapper end -->
+
+    <!-- Go To Top
+	============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+	============================================= -->
+    <script src="js/jquery.js"></script>
+    <script src="js/plugins.js"></script>
+
+    <!-- Footer Scripts
+	============================================= -->
+    <script src="js/functions.js"></script>
+  </body>
+</html>

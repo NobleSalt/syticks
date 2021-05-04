@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <%- include("partials/css") %>
+    <link
+      rel="stylesheet"
+      href="/css/components/bs-filestyle.css"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Document Title
+	============================================= -->
+    <title>Upload | Syticks</title>
+  </head>
+
+  <body class="stretched">
+    <!-- Document Wrapper
+	============================================= -->
+    <!-- Top Bar
+		============================================= -->
+    <%- include("partials/top") %>
+    <!-- #top-bar end -->
+
+    <div id="wrapper" class="clearfix">
+      <!-- Header
+		============================================= -->
+      <%- include("partials/header") %>
+      <!-- #header end -->
+
+      <section id="page-title">
+        <div class="container clearfix">
+          <h1>Upload</h1>
+        </div>
+      </section>
+      <!-- #page-title end -->
+
+      <section id="content">
+        <div class="content-wrap">
+          <div class="container clearfix">
+            <div class="row">
+              <form action="/admin/upload" method="POST" class="col-lg-12">
+                <div class="form-group bottommargin">
+                  <label>Event Banners:</label><br />
+                  <input
+                    id="media"
+                    name="media"
+                    type="file"
+                    class="file"
+                    multiple
+                    data-show-upload="false"
+                    data-show-caption="true"
+                    data-show-preview="true"
+                  />
+                </div>
+                <div class="form-group bottommargin">
+                  <label for="name">Event Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    aria-describedby="name"
+                    placeholder="Enter event name"
+                    name="name"
+                  />
+                </div>
+
+                <div class="form-group bottommargin">
+                  <label for="organizer">Organizer</label>
+                  <input
+                    type="text"
+                    name="organizer"
+                    class="form-control"
+                    id="organizer"
+                    placeholder="Who is the organizer?"
+                  />
+                </div>
+
+                <div class="form-group bottommargin">
+                  <label for="description">Description</label>
+                  <textarea
+                    name="description"
+                    class="form-control"
+                    id="description"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="form-group bottommargin">
+                  <label for="sponsors">Sponsors</label>
+                  <small>Use a comma to seperate each sponsor</small>
+                  <textarea
+                    name="sponsors"
+                    class="form-control"
+                    id="sponsors"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="form-group bottommargin">
+                  <label for="pricing">Pricing</label>
+                  <small
+                    >Seperate the Pricing from the amount with a " - " (e.g
+                    TickectType1-1000 and use a comma between each price)</small
+                  >
+                  <textarea
+                    class="form-control"
+                    id="pricing"
+                    rows="3"
+                    name="pricing"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content
+      ============================================= -->
+
+      <!-- #content end -->
+
+      <!-- #content end -->
+
+      <!-- Footer
+		============================================= -->
+      <%- include("partials/footer") %>
+      <!-- #footer end -->
+
+      <!-- #footer end -->
+    </div>
+    <!-- #wrapper end -->
+
+    <!-- Go To Top
+	============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+	============================================= -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/components/bs-filestyle.js"></script>
+
+    <!-- Footer Scripts
+	============================================= -->
+    <script src="/js/functions.js"></script>
+  </body>
+</html>

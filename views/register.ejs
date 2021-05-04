@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <%- include("partials/css") %>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Document Title
+	============================================= -->
+    <title>Home | Syticks</title>
+  </head>
+
+  <body class="stretched">
+    <!-- Document Wrapper
+	============================================= -->
+    <!-- Top Bar
+		============================================= -->
+    <%- include("partials/top") %>
+    <!-- #top-bar end -->
+
+    <div id="wrapper" class="clearfix">
+      <!-- Header
+		============================================= -->
+      <%- include("partials/header") %>
+      <!-- #header end -->
+
+      <section id="page-title">
+        <div class="container clearfix">
+          <h1>Account</h1>
+        </div>
+      </section>
+      <!-- #page-title end -->
+
+      <!-- Content
+      ============================================= -->
+
+      <section id="content">
+        <div class="content-wrap">
+          <div class="container clearfix">
+            <div class="col_two_third divcenter nobottommargin">
+              <h3>Don't have an Account? Register Now.</h3>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde,
+                vel odio non dicta provident sint ex autem mollitia dolorem
+                illum repellat ipsum aliquid illo similique sapiente fugiat
+                minus ratione.
+              </p>
+
+              <form
+                id="register-form"
+                name="register-form"
+                class="nobottommargin"
+                action="/register"
+                method="post"
+              >
+                <div class="col_half col_last">
+                  <label for="email">Email Address:</label>
+                  <input
+                    type="text"
+                    id="email"
+                    required
+                    name="email"
+                    value=""
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="col_half">
+                  <label for="username">Choose a Username:</label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    required
+                    value=""
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="col_half col_last">
+                  <label for="phone">Phone:</label>
+                  <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    value=""
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="col_half">
+                  <label for="password">Choose Password:</label>
+                  <input
+                    type="password"
+                    id="password"
+                    required
+                    name="password"
+                    value=""
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="col_half">
+                  <label for="repassword">Re-enter Password:</label>
+                  <input
+                    type="password"
+                    id="repassword"
+                    name="repassword"
+                    value=""
+                    min="6"
+                    max="12"
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="col_full nobottommargin">
+                  <button
+                    class="button button-3d button-black nomargin"
+                    id="submit"
+                    name="submit"
+                    value="register"
+                  >
+                    Register Now
+                  </button>
+                </div>
+              </form>
+              <p class="fright center">
+                Already have an account?
+                <a href="/login" class="fright">Login</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- #content end -->
+
+      <!-- #content end -->
+
+      <!-- Footer
+		============================================= -->
+      <%- include("partials/footer") %>
+      <!-- #footer end -->
+
+      <!-- #footer end -->
+    </div>
+    <!-- #wrapper end -->
+
+    <!-- Go To Top
+	============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+	============================================= -->
+    <script src="js/jquery.js"></script>
+    <script src="js/plugins.js"></script>
+
+    <!-- Footer Scripts
+	============================================= -->
+    <script src="js/functions.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#repassword").focusout(function () {
+          let pass = $("#password").val();
+          let pass2 = $("#repassword").val();
+
+          if (pass !== pass2) {
+            $("#repassword").after(`
+<small style="color:red">Passwords do not match</small>
+`);
+          }
+          e;
+        });
+      });
+    </script>
+  </body>
+</html>
