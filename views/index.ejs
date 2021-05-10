@@ -41,20 +41,20 @@
               <div
                 class="swiper-slide dark"
                 style="
-                  background-image: url('./images/62A264E1-FBA0-4E3D-A2A0-7FFA3166E1F2.jpeg');
+                  background-image: url('./images/custom/welcome.jpg');
                 "
               ></div>
               <div
                 class="swiper-slide dark"
                 style="
-                  background-image: url('./images/NG_HALF_PRICE_STORE_Slider.jpg');
+                  background-image: url('./images/custom/tickets.jpg');
                 "
               ></div>
 
               <div
                 class="swiper-slide dark"
                 style="
-                  background-image: url('./images/62A264E1-FBA0-4E3D-A2A0-7FFA3166E1F2.jpeg');
+                  background-image: url('./images/custom/enquires.jpg');
                 "
               ></div>
             </div>
@@ -75,7 +75,7 @@
       <section id="content">
         <!-- /hero section -->
         <div class="fancy-title title-border title-center topmargin-sm">
-          <h4>Top Events</h4>
+          <h4> Upcoming Events</h4>
           <a href="#">[See More]</a>
         </div>
         <div class="content-wrap">
@@ -87,7 +87,10 @@
               class="shop grid-container clearfix"
               data-layout="fitRows"
             >
-              <div class="product clearfix">
+
+
+<% for (let i = 0; i < events.length; i++) {%>
+     <div class="product clearfix">
                 <div class="product-image">
                   <a href="#"
                     ><img
@@ -95,233 +98,26 @@
                       alt="Checked Short Dress"
                   /></a>
 
-                  <div class="product-overlay">
-                    <a
-                      href="include/ajax/shop-item.html"
-                      class="item-quick-view"
-                      data-lightbox="ajax"
-                      ><i class="icon-zoom-in2"></i><span> Quick View</span></a
-                    >
-                  </div>
+                 
                 </div>
                 <div class="product-desc">
                   <div class="product-title">
-                    <h3><a href="#">Checked Short Dress</a></h3>
+                    <h3><a href="/events/<%=events[i].slug%>"><%= events[i].name%></a></h3>
                   </div>
-                  <div class="product-price">
-                    <div class="product-price">$39.99</div>
-                  </div>
+                 
                 </div>
               </div>
-              <div class="product clearfix">
-                <div class="product-image">
-                  <a href="#"
-                    ><img
-                      src="images/shop/pants/1-1.jpg "
-                      alt="Checked Short Dress"
-                  /></a>
+  
+<% } %>
 
-                  <div class="product-overlay">
-                    <a
-                      href="include/ajax/shop-item.html"
-                      class="item-quick-view"
-                      data-lightbox="ajax"
-                      ><i class="icon-zoom-in2"></i><span> Quick View</span></a
-                    >
-                  </div>
-                </div>
-                <div class="product-desc">
-                  <div class="product-title">
-                    <h3><a href="#">Checked Short Dress</a></h3>
-                  </div>
-                  <div class="product-price">
-                    <div class="product-price">$39.99</div>
-                  </div>
-                </div>
-              </div>
-              <div class="product clearfix">
-                <div class="product-image">
-                  <a href="#"
-                    ><img
-                      src="images/shop/dress/2.jpg"
-                      alt="Checked Short Dress"
-                  /></a>
-
-                  <div class="sale-flash">50% Off*</div>
-                  <div class="product-overlay">
-                    <a
-                      href="include/ajax/shop-item.html"
-                      class="item-quick-view"
-                      data-lightbox="ajax"
-                      ><i class="icon-zoom-in2"></i><span> Quick View</span></a
-                    >
-                  </div>
-                </div>
-                <div class="product-desc">
-                  <div class="product-title">
-                    <h3><a href="#">Checked Short Dress</a></h3>
-                  </div>
-                  <div class="product-price">
-                    <div class="product-price">$39.99</div>
-                  </div>
-                </div>
-              </div>
-              <div class="product clearfix">
-                <div class="product-image">
-                  <a href="#"
-                    ><img
-                      src="images/shop/shoes/1.jpg"
-                      alt="Checked Short Dress"
-                  /></a>
-
-                  <div class="product-overlay">
-                    <a
-                      href="include/ajax/shop-item.html"
-                      class="item-quick-view"
-                      data-lightbox="ajax"
-                      ><i class="icon-zoom-in2"></i><span> Quick View</span></a
-                    >
-                  </div>
-                </div>
-                <div class="product-desc">
-                  <div class="product-title">
-                    <h3><a href="#">Checked Short Dress</a></h3>
-                  </div>
-                  <div class="product-price">
-                    <div class="product-price">$39.99</div>
-                  </div>
-                </div>
-              </div>
+           
+             
             </div>
             <!-- #shop end -->
           </div>
         </div>
       </section>
-      <section id="content">
-        <!-- /hero section -->
-        <div class="fancy-title title-border title-center topmargin">
-          <h4>Featured</h4>
-          <a href="#">[See More]</a>
-        </div>
-        <div class="content-wrap">
-          <div class="container clearfix">
-            <!-- Shop
-            ============================================= -->
-            <div
-              id="shop"
-              class="shop grid-container clearfix"
-              data-layout="fitRows"
-            >
-              <div class="product clearfix">
-                <div class="product-image">
-                  <a href="#"
-                    ><img
-                      src="images/shop/dress/1.jpg"
-                      alt="Checked Short Dress"
-                  /></a>
-
-                  <div class="product-overlay">
-                    <a
-                      href="include/ajax/shop-item.html"
-                      class="item-quick-view"
-                      data-lightbox="ajax"
-                      ><i class="icon-zoom-in2"></i><span> Quick View</span></a
-                    >
-                  </div>
-                </div>
-                <div class="product-desc">
-                  <div class="product-title">
-                    <h3><a href="#">Checked Short Dress</a></h3>
-                  </div>
-                  <div class="product-price">
-                    <div class="product-price">$39.99</div>
-                  </div>
-                </div>
-              </div>
-              <div class="product clearfix">
-                <div class="product-image">
-                  <a href="#"
-                    ><img
-                      src="images/shop/pants/1-1.jpg "
-                      alt="Checked Short Dress"
-                  /></a>
-
-                  <div class="product-overlay">
-                    <a
-                      href="include/ajax/shop-item.html"
-                      class="item-quick-view"
-                      data-lightbox="ajax"
-                      ><i class="icon-zoom-in2"></i><span> Quick View</span></a
-                    >
-                  </div>
-                </div>
-                <div class="product-desc">
-                  <div class="product-title">
-                    <h3><a href="#">Checked Short Dress</a></h3>
-                  </div>
-                  <div class="product-price">
-                    <div class="product-price">$39.99</div>
-                  </div>
-                </div>
-              </div>
-              <div class="product clearfix">
-                <div class="product-image">
-                  <a href="#"
-                    ><img
-                      src="images/shop/dress/2.jpg"
-                      alt="Checked Short Dress"
-                  /></a>
-
-                  <div class="sale-flash">50% Off*</div>
-                  <div class="product-overlay">
-                    <a
-                      href="include/ajax/shop-item.html"
-                      class="item-quick-view"
-                      data-lightbox="ajax"
-                      ><i class="icon-zoom-in2"></i><span> Quick View</span></a
-                    >
-                  </div>
-                </div>
-                <div class="product-desc">
-                  <div class="product-title">
-                    <h3><a href="#">Checked Short Dress</a></h3>
-                  </div>
-                  <div class="product-price">
-                    <div class="product-price">$39.99</div>
-                  </div>
-                </div>
-              </div>
-              <div class="product clearfix">
-                <div class="product-image">
-                  <a href="#"
-                    ><img
-                      src="images/shop/shoes/1.jpg"
-                      alt="Checked Short Dress"
-                  /></a>
-
-                  <div class="product-overlay">
-                    <a
-                      href="include/ajax/shop-item.html"
-                      class="item-quick-view"
-                      data-lightbox="ajax"
-                      ><i class="icon-zoom-in2"></i><span> Quick View</span></a
-                    >
-                  </div>
-                </div>
-                <div class="product-desc">
-                  <div class="product-title">
-                    <h3><a href="#">Checked Short Dress</a></h3>
-                  </div>
-                  <div class="product-price">
-                    <div class="product-price">$39.99</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- #shop end -->
-          </div>
-        </div>
-      </section>
+     
 
       <!-- Content=======   -->
 

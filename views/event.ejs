@@ -61,11 +61,11 @@
                             >
                               <a
                                 href="images/shop/dress/3.jpg"
-                                title="<%= data.name %> "
+                                title="<%= event.name %> "
                                 data-lightbox="gallery-item"
                                 ><img
                                   src="images/shop/dress/3.jpg"
-                                  alt="<%= data.name %> >"
+                                  alt="<%= event.name %> >"
                               /></a>
                             </div>
                           </div>
@@ -85,13 +85,13 @@
 
                     <!-- Product Single - Short Description
                     ============================================= -->
-                    <p><%= data.description %></p>
+                    <p><%= event.description %></p>
 
-                    <% if (data.features) { %>
+                    <% if (event.features) { %>
                     <ul class="iconlist">
-                      <% for( let i = 0; i < data.features.length; i++ ) { %>
+                      <% for( let i = 0; i < event.features.length; i++ ) { %>
                       <li>
-                        <i class="icon-caret-right"></i><%= data.features[i] %>
+                        <i class="icon-caret-right"></i><%= event.features[i] %>
                       </li>
                       <% } %>
                     </ul>
@@ -123,19 +123,19 @@
               <div class="clear"></div>
               <div class="line"></div>
               <div class="row pricing bottommargin clearfix">
-                <% for( let i = 0; i < data.pricing.length; i++ ) { %>
+                <% for( let i = 0; i < event.pricings.length; i++ ) { %>
 
                 <div class="pricing-box pricing-minimal col-md-4">
                   <div class="pricing-title">
-                    <h3>data.pricing[i].priceName</h3>
+                    <h3><%=event.pricings[i].priceName%></h3>
 
-                    <% if (data.pricing[i].description) { %>
+                    <% if (event.pricings[i].description) { %>
                     <span>Single seat</span>
                     <% } %>
                   </div>
                   <div class="pricing-price">
                     <span class="price-unit">&#8358;</span
-                    >data.pricing[i].priceAmount
+                    ><%=event.pricings[i].priceAmount%>
                   </div>
                   <div class="pricing-action">
                     <form
@@ -154,8 +154,8 @@
                           title="Qty"
                           class="qty"
                           size="4"
-                          data-name="<%=data.pricing[i].priceName  %> "
-                          data-amount="<%=data.pricing[i].priceName  %> "
+                          data-name="<%=event.pricings[i].priceName  %> "
+                          data-amount="<%=event.pricings[i].priceName  %> "
                         />
                         <input type="button" value="+" class="plus" />
                       </div>
@@ -172,46 +172,26 @@
                 <div class="widget widget_links clearfix">
                   <h4>Cart</h4>
                   <ul class="list-group custom-cart">
+                    <% for( let i = 0; i < event.pricings.length; i++ ) { %>
+
                     <li
                       class="list-group-item custom-cart-item"
-                      data-name="regular"
-                      data-price="1000"
+                      data-name="<%= event.pricings[i].priceName%> "
+                      data-price="<%= event.pricings[i].priceAmount  %>"
                     >
-                      Regular
+                      <%= event.pricings[i].priceName %>
                       <span
                         class="badge badge-secondary float-right custom-span"
                         style="margin-top: 3px"
                         >0</span
                       >
                     </li>
-                    <li
-                      class="list-group-item custom-cart-item"
-                      data-name="vip"
-                      data-price="10000"
-                    >
-                      VIP
-                      <span
-                        class="badge badge-secondary float-right custom-span"
-                        style="margin-top: 3px"
-                        >0</span
-                      >
-                    </li>
-                    <li
-                      class="list-group-item custom-cart-item"
-                      data-name="vvip"
-                      data-price="100000"
-                    >
-                      VVIP
-                      <span
-                        class="badge badge-secondary float-right custom-span"
-                        style="margin-top: 3px"
-                        >0</span
-                      >
-                    </li>
+
+                    <% } %>
                   </ul>
                   <br />
                   <form
-                    action="/transaction/:id"
+                    action="/transaction/<%=event.slug%>"
                     method="post"
                     class="cart-form"
                   >

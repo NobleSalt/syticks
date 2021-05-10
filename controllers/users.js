@@ -1,4 +1,5 @@
 const userModel = require("../models/user");
+const TicketModel = require("../models/tickets");
 
 exports.getUserProfile = async (req, res, next) => {
   let data;
@@ -15,6 +16,9 @@ exports.getUserProfile = async (req, res, next) => {
     if (!user) {
       res.redirect("/login");
     }
+
+    // get event data
+
     data = {
       title: "Profile | Syticks",
       user

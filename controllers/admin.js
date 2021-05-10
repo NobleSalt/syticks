@@ -35,12 +35,22 @@ exports.getUpload = async (req, res, next) => {
 };
 
 exports.handleUpload = async (req, res, next) => {
-  const { name, organiser, sponsors, description, number, pricing } = req.body;
-  console.log(req.body);
+  const {
+    name,
+    organizer,
+    sponsors,
+    description,
+    number = "08058473284",
+    pricing
+  } = req.body;
+
   let data;
+
+  console.log(req.body);
+
   try {
     let organiserData = {
-      name: organiser,
+      name: organizer,
       phone: number
     };
 
@@ -67,8 +77,10 @@ exports.handleUpload = async (req, res, next) => {
       organiser: org._id
     };
 
+    let result = await Event.create(data);
+
     if (req.files) {
-      data.images = [];
+      let imagesArr = [];
 
       let dtauri = new DataUri();
       for (const file of req.files) {
@@ -81,16 +93,21 @@ exports.handleUpload = async (req, res, next) => {
 
         let image = await cloudinary.v2.uploader.upload_large(finalFile);
 
-        data.images.push({
+        imagesArr.push({
           url: image.secure_url,
           public_id: image.public_id
         });
       }
-    }
 
-    let result = await Event.create(data);
+      result.images = imagesArr;
+    }
 
     org.event = result._id;
     await org.save();
-  } catch (error) {}
+    await result.save();
+
+    res.redirect("/");
+  } catch (error) {
+    console.log(error);
+  }
 };
