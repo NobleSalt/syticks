@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 //   6
 // );
 
-const ticketSchema = new mongoose.Schema(
+const transactionSchema = new mongoose.Schema(
   {
     amount: {
       type: Number,
@@ -52,4 +52,4 @@ const ticketSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("tickets", ticketSchema);
+module.exports = mongoose.model("transaction", transactionSchema);

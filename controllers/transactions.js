@@ -15,7 +15,7 @@ exports.makePayment = async (req, res) => {
   let { _id } = req.user;
   let { slug } = req.params;
   let user = await User.findById(_id);
-  console.log(amount);
+  console.log(req.body);
 
   let tranCode = nanoid();
   let tx_ref = "styicks-" + tranCode;

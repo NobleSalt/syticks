@@ -4820,6 +4820,7 @@ var SEMICOLON = SEMICOLON || {};
                 if (val == ticketName) {
                   $(this).find(".custom-span").text(productQuantityPlus);
                   $(this).find(".custom-span").val(productQuantityPlus);
+                  $("#" + val).val(productQuantityPlus);
                 }
 
                 let num = $(this).find(".custom-span").val();
@@ -4877,6 +4878,7 @@ var SEMICOLON = SEMICOLON || {};
                   if (val == ticketName) {
                     $(this).find(".custom-span").text(productQuantityMinus);
                     $(this).find(".custom-span").val(productQuantityMinus);
+                    $("#" + val).val(productQuantityPlus);
                   }
                   let num = $(this).find(".custom-span").val();
                   console.log(num);

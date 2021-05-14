@@ -196,9 +196,17 @@
                     class="cart-form"
                   >
                     <input type="hidden" name="amount" class="cart-input" />
-                    <!--  <input type="hidden" name="regular" class="cart-input" />
-                    <input type="hidden" name="vip" class="cart-input" />
-                    <input type="hidden" name="vvip" class="cart-input" /> -->
+
+                    <% for( let i = 0; i < event.pricings.length; i++ ) { %>
+
+                    <input
+                      type="hidden"
+                      name="<%= event.pricings[i].priceName%>"
+                      id="<%= event.pricings[i].priceName%>"
+                    />
+
+                    <% } %>
+
                     <button
                       type="submit"
                       class="button button-3d button-rounded center"
