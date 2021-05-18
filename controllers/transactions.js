@@ -68,9 +68,9 @@ exports.makePayment = async (req, res) => {
     if (result.data.status == "success") {
       res.render("confirm", data);
     }
-
-    console.log();
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 exports.verifyPayment = async (req, res) => {
@@ -108,5 +108,7 @@ exports.verifyPayment = async (req, res) => {
       } else {
       }
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };

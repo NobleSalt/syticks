@@ -79,8 +79,6 @@ exports.handleUpload = async (req, res, next) => {
       date
     };
 
-    let result = await Event.create(data);
-
     if (req.files) {
       let imagesArr = [];
 
@@ -101,12 +99,12 @@ exports.handleUpload = async (req, res, next) => {
         });
       }
 
-      result.images = imagesArr;
+      data.images = imagesArr;
     }
 
+    let result = await Event.create(data);
     org.event = result._id;
     await org.save();
-    await result.save();
 
     res.redirect("/");
   } catch (error) {
