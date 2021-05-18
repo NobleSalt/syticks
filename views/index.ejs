@@ -30,7 +30,12 @@
       <!-- hero section -->
       <section
         id="slider"
-        class="slider-element slider-parallax swiper_wrapper full-screen clearfix"
+        class="
+          slider-element slider-parallax
+          swiper_wrapper
+          full-screen
+          clearfix
+        "
         data-autoplay="7000"
         data-speed="3000"
         data-loop="true"
@@ -40,22 +45,16 @@
             <div class="swiper-wrapper">
               <div
                 class="swiper-slide dark"
-                style="
-                  background-image: url('./images/custom/welcome.jpg');
-                "
+                style="background-image: url('./images/custom/welcome.jpg')"
               ></div>
               <div
                 class="swiper-slide dark"
-                style="
-                  background-image: url('./images/custom/tickets.jpg');
-                "
+                style="background-image: url('./images/custom/tickets.jpg')"
               ></div>
 
               <div
                 class="swiper-slide dark"
-                style="
-                  background-image: url('./images/custom/enquires.jpg');
-                "
+                style="background-image: url('./images/custom/enquires.jpg')"
               ></div>
             </div>
             <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
@@ -75,8 +74,8 @@
       <section id="content">
         <!-- /hero section -->
         <div class="fancy-title title-border title-center topmargin-sm">
-          <h4> Upcoming Events</h4>
-          <a href="#">[See More]</a>
+          <h4>Upcoming Events</h4>
+          <a href="/events">[See More]</a>
         </div>
         <div class="content-wrap">
           <div class="container clearfix">
@@ -87,37 +86,32 @@
               class="shop grid-container clearfix"
               data-layout="fitRows"
             >
-
-
-<% for (let i = 0; i < events.length; i++) {%>
-     <div class="product clearfix">
+              <% for (let i = 0; i < events.length; i++) {%>
+              <div class="product clearfix">
                 <div class="product-image">
                   <a href="#"
                     ><img
                       src="images/shop/dress/1.jpg"
                       alt="Checked Short Dress"
                   /></a>
-
-                 
                 </div>
                 <div class="product-desc">
                   <div class="product-title">
-                    <h3><a href="/events/<%=events[i].slug%>"><%= events[i].name%></a></h3>
+                    <h3>
+                      <a href="/events/<%=events[i].slug%>"
+                        ><%= events[i].name%></a
+                      >
+                    </h3>
                   </div>
-                 
                 </div>
               </div>
-  
-<% } %>
 
-           
-             
+              <% } %>
             </div>
             <!-- #shop end -->
           </div>
         </div>
       </section>
-     
 
       <!-- Content=======   -->
 

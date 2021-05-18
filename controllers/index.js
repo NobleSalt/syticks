@@ -3,7 +3,7 @@ const UserModel = require("../models/user");
 const passport = require("passport");
 
 exports.createUser = async (req, res, next) => {
-  const { name, email, username, phone, password } = req.body;
+  const { name, email, username, phone, password, role } = req.body;
   let user;
   try {
     user = await UserModel.findOne({ username });
@@ -19,7 +19,8 @@ exports.createUser = async (req, res, next) => {
       password: hashedPassword,
       email,
       phone,
-      username
+      username,
+      role
     });
 
     let result = await user.save();
@@ -36,7 +37,6 @@ exports.loginUser = async (req, res, next) => {
     if (!user) return res.redirect("/login");
     req.logIn(user, error => {
       if (err) return next(error);
-      console.log(user._id);
 
       if (user.role === "admin") {
         return res.redirect("/admin");

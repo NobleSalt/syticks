@@ -41,7 +41,8 @@ exports.handleUpload = async (req, res, next) => {
     sponsors,
     description,
     number = "08058473284",
-    pricing
+    pricing,
+    date
   } = req.body;
 
   let data;
@@ -74,7 +75,8 @@ exports.handleUpload = async (req, res, next) => {
       description,
       sponsors: sponsorArr,
       pricings,
-      organiser: org._id
+      organiser: org._id,
+      date
     };
 
     let result = await Event.create(data);

@@ -44,6 +44,8 @@ const eventSchema = new mongoose.Schema(
       }
     ],
 
+    date: Date,
+
     tickets: [{ type: mongoose.Schema.Types.ObjectId, ref: "tickets" }]
   },
   { timestamps: true }

@@ -59,7 +59,7 @@
               </div>
               <div class="divcenter topmargin center">
                 <h2 class="nobottommargin"><%= user.username %></h2>
-                <span class="uppercase">userid-<%= user._id %> </span>
+                <span class="uppercase">userid-<%= user.slug %> </span>
               </div>
 
               <div class="toggle topmargin">
@@ -256,7 +256,12 @@
                         placeholder="Email Address"
                       />
                       <textarea
-                        class="required sm-form-control input-block-level short-textarea"
+                        class="
+                          required
+                          sm-form-control
+                          input-block-level
+                          short-textarea
+                        "
                         id="quick-contact-form-message"
                         name="quick-contact-form-message"
                         rows="4"

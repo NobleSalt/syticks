@@ -109,6 +109,22 @@
                             >Syticks- <%= event.slug %>
                           </span></span
                         >
+                        <br />
+                        <br />
+                        <span itemprop="productID" class="sku_wrapper"
+                          >Event Organizer:
+                          <span class="sku"
+                            ><%= event.organiser.name %>
+                          </span></span
+                        >
+                        <br />
+                        <br />
+                        <span itemprop="productID" class="sku_wrapper"
+                          >Event Date:
+                          <span class="sku"
+                            ><%= new Date(event.date).toDateString()%>
+                          </span></span
+                        >
                       </div>
                     </div>
                     <!-- Product Single - Meta End -->

@@ -9,14 +9,16 @@ exports.getAll = async (req, res, next) => {
       events
     };
     res.render("events", data);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 exports.getOneEvent = async (req, res, next) => {
   const { slug } = req.params;
   console.log(slug);
   try {
-    let event = await Events.findOne({ slug });
+    let event = await Events.findOne({ slug }).populate("organiser");
     console.log(event);
 
     let data = {

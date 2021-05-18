@@ -9,7 +9,7 @@ const nanoid = customAlphabet(
 
 const userSchema = new mongoose.Schema(
   {
-    _id: { type: String, default: () => nanoid() },
+    slug: { type: String, default: () => nanoid() },
 
     username: {
       type: String,
