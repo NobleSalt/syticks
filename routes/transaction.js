@@ -6,7 +6,12 @@ const { makePayment, verifyPayment } = require("../controllers/transactions");
 /* GET users listing. */
 router.post("/:slug", checkAuthentication, makePayment);
 
-router.get("/confirm", checkAuthentication, async (req, res) => {
+router.get("/confirm/:link", checkAuthentication, async (req, res) => {
+  const { link } = req.params;
+  let data = {
+    title: "Confirm Payment | Syticks",
+    link
+  };
   res.render("confirm", data);
 });
 

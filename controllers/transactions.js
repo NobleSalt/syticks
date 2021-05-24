@@ -60,13 +60,10 @@ exports.makePayment = async (req, res) => {
       config
     );
 
-    let data = {
-      title: "Confirm Payment | Syticks",
-      link: result.data.data.link
-    };
+    let link = result.data.data.link;
 
     if (result.data.status == "success") {
-      res.render("confirm", data);
+      res.redirect(`/confirm/${link}`);
     }
   } catch (error) {
     console.log(error);
