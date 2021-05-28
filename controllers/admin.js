@@ -3,7 +3,7 @@ const Organiser = require("../models/organisers");
 const Event = require("../models/events");
 const DataUri = require("datauri/parser");
 const path = require("path");
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 
 exports.getAdminDash = async (req, res, next) => {
   let data;
@@ -24,7 +24,9 @@ exports.getAdminDash = async (req, res, next) => {
     };
 
     res.render("admin-dash", data);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 exports.getUpload = async (req, res, next) => {
@@ -91,8 +93,8 @@ exports.handleUpload = async (req, res, next) => {
 
         let finalFile = dataUri.content;
 
-        let image = await cloudinary.v2.uploader.upload_large(finalFile);
-
+        let image = await cloudinary.uploader.upload(finalFile);
+        console.log(image);
         imagesArr.push({
           url: image.secure_url,
           public_id: image.public_id

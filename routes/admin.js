@@ -9,7 +9,7 @@ const { checkAuthentication } = require("../util/auth");
 
 const multer = require("multer");
 let storage = multer.memoryStorage();
-let uploads = multer({ storage }).array("media");
+let uploads = multer({ storage: storage }).array("media");
 
 let { cloudConfig } = require("../controllers/cloudinary");
 
