@@ -26,7 +26,7 @@ exports.makePayment = async (req, res) => {
       tx_ref,
       amount,
       currency: "NGN",
-      redirect_url: `https://sytickss.herokuapp.com/transaction/verify`,
+      redirect_url: `www.syticks.com.ng/transaction/verify`,
       payment_options: "card",
 
       customer: {
