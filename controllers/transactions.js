@@ -2,6 +2,7 @@ const axios = require("axios");
 const { getUserProfile } = require("../controllers/users");
 const User = require("../models/user");
 const Transactions = require("../models/transactions");
+const Tickets = require("../models/tickets");
 
 const { customAlphabet } = require("nanoid");
 
@@ -11,7 +12,7 @@ const nanoid = customAlphabet(
 );
 
 exports.makePayment = async (req, res) => {
-  let { amount } = req.body;
+  let { amount, event } = req.body;
   let { _id } = req.user;
   let { slug } = req.params;
   let user = await User.findById(_id);
@@ -48,7 +49,15 @@ exports.makePayment = async (req, res) => {
       user_id: _id
     };
 
+    let ticketPayload = {
+      user_id: user._id,
+      TotalNumber: amount,
+      transaction_ref: tx_ref,
+      event
+    };
+
     await Transactions.create(transaction_payload);
+    await Tickets.create(ticketPayload);
 
     let config = {
       headers: { Authorization: `Bearer ${process.env.FLW_SECRET}` }
@@ -102,7 +111,12 @@ exports.verifyPayment = async (req, res) => {
         tranx.card = card;
 
         await tranx.save();
+        let ticket = await Tickets.findOne({ transaction_ref: tx_ref });
+
+        ticket.paid = true;
+        await ticket.save();
       } else {
+        throw new Error("Transaction Could not be verified at the moment");
       }
     }
   } catch (error) {

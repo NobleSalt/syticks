@@ -212,6 +212,12 @@
                     class="cart-form"
                   >
                     <input type="hidden" name="amount" class="cart-input" />
+                    <input
+                      type="hidden"
+                      name="event"
+                      class="cart-input"
+                      value="<%= event._id %> "
+                    />
 
                     <% for( let i = 0; i < event.pricings.length; i++ ) { %>
 
