@@ -14,6 +14,7 @@ const eventsRouter = require("./routes/events");
 const adminRouter = require("./routes/admin");
 const organisersRouter = require("./routes/organisers");
 const transactionRouter = require("./routes/transaction");
+const aboutRouter = require("./routes/about");
 
 let app = express();
 
@@ -54,6 +55,7 @@ app.use("/events", eventsRouter);
 app.use("/admin", adminRouter);
 app.use("/organiser", organisersRouter);
 app.use("/transaction", transactionRouter);
+app.use("/about", transactionRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
