@@ -12,7 +12,7 @@ const nanoid = customAlphabet(
 );
 
 exports.makePayment = async (req, res) => {
-  let { amount, event } = req.body;
+  let { amount } = req.body;
   let { _id } = req.user;
   let { slug } = req.params;
   let user = await User.findById(_id);
@@ -53,7 +53,7 @@ exports.makePayment = async (req, res) => {
       user_id: user._id,
       TotalNumber: amount,
       transaction_ref: tx_ref,
-      event
+      event: slug
     };
 
     await Transactions.create(transaction_payload);
@@ -72,7 +72,7 @@ exports.makePayment = async (req, res) => {
     let link = result.data.data.link;
 
     if (result.data.status == "success") {
-      res.redirect(`/confirm/${link}`);
+      res.redirect(link);
     }
   } catch (error) {
     console.log(error);

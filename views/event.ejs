@@ -29,7 +29,7 @@
 
       <section id="page-title">
         <div class="container clearfix">
-          <h1>The best event in Unizik</h1>
+          <h1><%= event.names%></h1>
         </div>
       </section>
       <!-- #page-title end -->
@@ -212,12 +212,6 @@
                     class="cart-form"
                   >
                     <input type="hidden" name="amount" class="cart-input" />
-                    <input
-                      type="hidden"
-                      name="event"
-                      class="cart-input"
-                      value="<%= event._id %> "
-                    />
 
                     <% for( let i = 0; i < event.pricings.length; i++ ) { %>
 
