@@ -80,7 +80,16 @@ exports.makePayment = async (req, res) => {
 };
 
 exports.verifyPayment = async (req, res) => {
-  const { transaction_id, status, tx_ref } = req.params;
+  const { fl_path } = req.params;
+  let tx_ref;
+  let transaction_id;
+  let status;
+
+  let options = fl_path.split("&");
+
+  tx_ref = options[0].split("=")[1];
+  transaction_id = options[1].split("=")[1];
+  status = options[2].split("=")[1];
 
   try {
     const tranx = await Transactions.findOne({ trans_ref: tx_ref });
@@ -115,9 +124,31 @@ exports.verifyPayment = async (req, res) => {
 
         ticket.paid = true;
         await ticket.save();
+        res.redirect(`/transaction/complete/${tx_ref}`);
       } else {
         throw new Error("Transaction Could not be verified at the moment");
       }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.greet = async (req, res) => {
+  let { tx_ref } = req.params;
+
+  try {
+    let ticket = Ticket.findOne({
+      transaction_ref: tx_ref
+    }).populate("user_id");
+
+    if (ticket) {
+      let data = {
+        ticket: ticket.slug,
+        user: ticket.user_id.slug
+      };
+
+      res.render("thanks", data);
     }
   } catch (error) {
     console.log(error);

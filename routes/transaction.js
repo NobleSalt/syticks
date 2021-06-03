@@ -1,7 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const { checkAuthentication } = require("../util/auth");
-const { makePayment, verifyPayment } = require("../controllers/transactions");
+const {
+  makePayment,
+  verifyPayment,
+  greet
+} = require("../controllers/transactions");
 
 /* GET users listing. */
 router.post("/:slug", checkAuthentication, makePayment);
@@ -15,6 +19,8 @@ router.get("/confirm/:link", checkAuthentication, async (req, res) => {
   res.render("confirm", data);
 });
 
-router.get("/verify", verifyPayment);
+router.get("/verify/:fl_path", verifyPayment);
+
+router.get("/transaction/complete/:tx_ref", greet);
 
 module.exports = router;

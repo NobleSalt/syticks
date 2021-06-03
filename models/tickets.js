@@ -10,9 +10,9 @@ const nanoid = customAlphabet(
 const ticketSchema = new mongoose.Schema(
   {
     slug: { type: String, default: () => nanoid() },
-    TotalAmount: Number,
+    amount: Number,
     user_id: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "user",
       required: true
     },
