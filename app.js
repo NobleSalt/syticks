@@ -55,7 +55,7 @@ app.use("/events", eventsRouter);
 app.use("/admin", adminRouter);
 app.use("/organiser", organisersRouter);
 app.use("/transaction", transactionRouter);
-app.use("/about", transactionRouter);
+app.use("/about", aboutRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

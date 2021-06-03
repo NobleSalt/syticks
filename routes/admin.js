@@ -4,14 +4,14 @@ const {
   getUpload,
   handleUpload
 } = require("../controllers/admin");
-const router = express.Router();
 const { checkAuthentication } = require("../util/auth");
+let { cloudConfig } = require("../controllers/cloudinary");
 
 const multer = require("multer");
 let storage = multer.memoryStorage();
 let uploads = multer({ storage: storage }).array("media");
 
-let { cloudConfig } = require("../controllers/cloudinary");
+const router = express.Router();
 
 /* GET users listing. */
 router.get("/", checkAuthentication, getAdminDash);

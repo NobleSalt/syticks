@@ -27,7 +27,7 @@ exports.createUser = async (req, res, next) => {
     res.redirect("/login");
     console.log(result);
   } catch (e) {
-    res.redirect("/auth/new");
+    res.redirect("/");
   }
 };
 

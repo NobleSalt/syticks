@@ -81,8 +81,10 @@ exports.handleUpload = async (req, res, next) => {
       date
     };
 
+    console.log("2" + req.files);
+    console.log("1" + req.file);
     if (req.files) {
-      let imagesArr = [];
+      data.images = [];
 
       let dtauri = new DataUri();
       for (const file of req.files) {
@@ -95,13 +97,11 @@ exports.handleUpload = async (req, res, next) => {
 
         let image = await cloudinary.uploader.upload(finalFile);
         console.log(image);
-        imagesArr.push({
+        data.images.push({
           url: image.secure_url,
           public_id: image.public_id
         });
       }
-
-      data.images = imagesArr;
     }
 
     let result = await Event.create(data);
