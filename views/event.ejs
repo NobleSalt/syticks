@@ -57,14 +57,14 @@
                           <div class="slider-wrap" data-lightbox="gallery">
                             <div
                               class="slide"
-                              data-thumb="images/shop/thumbs/dress/3.jpg"
+                              data-thumb="<%= event.images[0].url %> "
                             >
                               <a
-                                href="images/shop/dress/3.jpg"
+                                href="<%= event.images[0].url %> "
                                 title="<%= event.name %> "
                                 data-lightbox="gallery-item"
                                 ><img
-                                  src="images/shop/dress/3.jpg"
+                                  src="<%= event.images[0].url %> "
                                   alt="<%= event.name %> >"
                               /></a>
                             </div>
