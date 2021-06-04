@@ -9,9 +9,9 @@ const nanoid = customAlphabet(
 
 const organiserSchema = new mongoose.Schema(
   {
+    slug: { type: String, default: () => nanoid() },
     name: {
-      type: String,
-      
+      type: String
     },
     password: { type: String, default: () => nanoid() },
 

@@ -9,12 +9,12 @@ router.get("/:organiser_id", async function (req, res, next) {
   const { organiser_id } = req.params;
 
   try {
-    let organiser = await OrganiserModel.findOne({ _id: organiser_id });
+    let organiser = await OrganiserModel.findOne({ slug: organiser_id });
 
     res.render("organiser-dash", {
       title: "Organiser's Dashboard | Syticks",
       data: {
-        id: organiser._id
+        id: organiser.slug
       }
     });
   } catch (error) {
