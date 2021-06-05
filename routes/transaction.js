@@ -19,7 +19,7 @@ router.get("/confirm/:link", checkAuthentication, async (req, res) => {
   res.render("confirm", data);
 });
 
-router.get("/verify/:fl_path", verifyPayment);
+router.get("/verify", verifyPayment);
 
 router.get("/transaction/complete/:tx_ref", greet);
 

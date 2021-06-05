@@ -26,7 +26,7 @@ exports.makePayment = async (req, res) => {
       tx_ref,
       amount,
       currency: "NGN",
-      redirect_url: `www.syticks.com.ng/transaction/verify`,
+      redirect_url: `http://www.syticks.com.ng/transaction/verify`,
       payment_options: "card",
 
       customer: {
@@ -80,8 +80,10 @@ exports.makePayment = async (req, res) => {
 };
 
 exports.verifyPayment = async (req, res) => {
-  const { fl_path } = req.params;
-  let tx_ref;
+  const { tx_ref, transaction_id, status } = req.query;
+
+  // const { fl_path } = req.params;
+  /* let tx_ref;
   let transaction_id;
   let status;
 
@@ -89,7 +91,7 @@ exports.verifyPayment = async (req, res) => {
 
   tx_ref = options[0].split("=")[1];
   transaction_id = options[1].split("=")[1];
-  status = options[2].split("=")[1];
+  status = options[2].split("=")[1]; */
 
   try {
     const tranx = await Transactions.findOne({ trans_ref: tx_ref });
