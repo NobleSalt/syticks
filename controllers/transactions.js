@@ -81,6 +81,8 @@ exports.makePayment = async (req, res) => {
 
 exports.verifyPayment = async (req, res) => {
   const { tx_ref, transaction_id, status } = req.query;
+  console.log(tx_ref);
+  console.log(status);
 
   // const { fl_path } = req.params;
   /* let tx_ref;
@@ -94,15 +96,16 @@ exports.verifyPayment = async (req, res) => {
   status = options[2].split("=")[1]; */
 
   try {
-    const tranx = await Transactions.findOne({ trans_ref: tx_ref });
-    if (status === "success" && tranx) {
-      const url = `https://api.flutterwave.com/v3/transactions/${transaction_id}/verify`;
+    // const tranx = await Transactions.findOne({ trans_ref: tx_ref });
+    if (status === "successful" /* && tranx */) {
+      /* const url = `https://api.flutterwave.com/v3/transactions/${transaction_id}/verify`;
 
       let config = {
         headers: { Authorization: `Bearer ${process.env.FLW_SECRET}` }
-      };
+      }; */
 
-      const { data } = await axios.get(url, config);
+      /*  const { data } = await axios.get(url, config);
+      console.log(data);
 
       if (data.status == "success") {
         tranx.trans_id = transaction_id;
@@ -125,11 +128,27 @@ exports.verifyPayment = async (req, res) => {
         let ticket = await Tickets.findOne({ transaction_ref: tx_ref });
 
         ticket.paid = true;
-        await ticket.save();
-        res.redirect(`/transaction/complete/${tx_ref}`);
-      } else {
-        throw new Error("Transaction Could not be verified at the moment");
-      }
+        await ticket.save(); */
+      /* res.redirect(`/transaction/complete/${tx_ref}`); */
+
+      /* let ticket = await Tickets.findOne({
+        transaction_ref: tx_ref
+      }); */
+
+      res.render("thanks" /* data */);
+
+      /*  console.log(ticket);
+
+      if (ticket) {
+        let data = {
+          ticket: ticket.slug,
+          user: ticket.user_id.slug
+        };
+
+        
+      } */
+    } else {
+      res.render("error" /* data */);
     }
   } catch (error) {
     console.log(error);
@@ -138,6 +157,8 @@ exports.verifyPayment = async (req, res) => {
 
 exports.greet = async (req, res) => {
   let { tx_ref } = req.params;
+
+  console.log(tx_ref);
 
   try {
     let ticket = Ticket.findOne({
